@@ -1,0 +1,9 @@
+pip install --upgrade pip
+pip install fastapi
+pip install pip-tools
+
+pip freeze
+-- get the fastapi from there to the requirements.in
+fastapi==0.111.0
+sqlalchemy==2.0.15 -- ORM
+psycopg2-binary==2.9.6 -- driver for pgsql
