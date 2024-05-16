@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models import Cat, Rat
-from schemas import CatCreate, RatCreate
+from src.app.models import Cat, Rat
+from src.app.schemas import CatCreate, RatCreate
 
 
 # CRUD for Cats

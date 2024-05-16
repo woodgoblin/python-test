@@ -3,9 +3,9 @@ from typing import List
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-import crud
-from database import SessionLocal, engine, Base
-from schemas import CatCreate, Cat, RatCreate, Rat
+import src.app.crud
+from src.app.database import SessionLocal, engine, Base
+from src.app.schemas import CatCreate, Cat, RatCreate, Rat
 
 Base.metadata.create_all(bind=engine)
 
@@ -46,7 +46,7 @@ def create_cat(cat: CatCreate, db: Session = Depends(get_db)):
 
 
 cat_example_list = [
-    Cat.parse_obj(Cat(
+    Cat(
         id=2,
         birth_date="2021-05-15",
         paws_quantity=4,
@@ -71,8 +71,8 @@ cat_example_list = [
                 cat_id=2
             )
         ]
-    )),
-    Cat.parse_obj(Cat(
+    ),
+    Cat(
         id=1,
         birth_date="2020-01-01",
         paws_quantity=4,
@@ -80,7 +80,7 @@ cat_example_list = [
         gender="M",
         tails_quantity=1,
         rats_eaten=[]
-    ))
+    )
 ]
 
 
