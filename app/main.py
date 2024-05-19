@@ -3,9 +3,9 @@ from typing import List
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-import src.app.crud
-from src.app.database import SessionLocal, engine, Base
-from src.app.schemas import CatCreate, Cat, RatCreate, Rat
+from app.database import SessionLocal, engine, Base
+from app.schemas import CatCreate, Cat, RatCreate, Rat
+from app import crud
 
 Base.metadata.create_all(bind=engine)
 

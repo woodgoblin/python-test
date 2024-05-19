@@ -1,6 +1,6 @@
 from sqlalchemy import Integer, String, Date, Boolean, ForeignKey
-from sqlalchemy.orm import relationship, mapped_column
-from src.app.database import Base
+from sqlalchemy.orm import mapped_column
+from app.database import Base
 import os
 
 def schema():
@@ -29,6 +29,6 @@ class Rat(Base):
     courage = mapped_column(Integer, nullable=False)
     stupidity = mapped_column(Integer, nullable=False)
     is_eaten = mapped_column(Boolean, default=False)
-    #cat_id = mapped_column(Integer, ForeignKey('Cat.id'), nullable=True)
+    #todo cat_id = mapped_column(Integer, ForeignKey('Cat.id'), nullable=True)
 
     # cat = relationship("Cat", back_populates="rats")

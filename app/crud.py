@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from src.app.models import Cat, Rat
-from src.app.schemas import CatCreate, RatCreate
+from app.models import Cat, Rat
+from app.schemas import CatCreate, RatCreate
 
 
 # CRUD for Cats
@@ -9,7 +9,7 @@ def get_cats(db: Session, skip: int = 0, limit: int = 10):
 
 
 def get_cat(db: Session, cat_id: int):
-    return db.query(Cat).filter(Cat.ID == cat_id).first()
+    return db.query(Cat).filter(Cat.id == cat_id).first()
 
 
 def create_cat(db: Session, cat: CatCreate):
