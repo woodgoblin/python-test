@@ -129,7 +129,7 @@ async def test_create_rat(async_client):
     assert data["birth_date"] == "2022-01-01"
     assert data["courage"] == 5
     assert data["stupidity"] == 2
-    assert data["is_eaten"] == False
+    assert data["is_eaten"] is False
     assert data["cat_id"] is None
 
 

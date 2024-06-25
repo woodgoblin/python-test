@@ -44,7 +44,7 @@ def get_rats(db: Session, skip: int = 0, limit: int = 10):
 
 
 def get_rat(db: Session, rat_id: int):
-    return db.query(Rat).filter(Rat.ID == rat_id).first()
+    return db.query(Rat).filter(Rat.id == rat_id).first()
 
 
 def create_rat(db: Session, rat: RatCreate):

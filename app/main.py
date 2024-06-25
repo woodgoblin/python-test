@@ -92,13 +92,47 @@ cat_example_list = [
                 "examples": {
                     "Example 1": {
                         "summary": "A list of cats -- a cat without a rat and a cat with two rats",
-                        "value": cat_example_list
+                        "value": [
+                            Cat(
+                                id=2,
+                                birth_date="2021-05-15",
+                                paws_quantity=4,
+                                name="Mittens",
+                                gender="F",
+                                tails_quantity=1,
+                                rats_eaten=[
+                                    Rat(
+                                        id=1,
+                                        birth_date="2022-03-01",
+                                        courage=8,
+                                        stupidity=3,
+                                        is_eaten=True,
+                                        cat_id=2
+                                    ),
+                                    Rat(
+                                        id=2,
+                                        birth_date="2022-03-01",
+                                        courage=0,
+                                        stupidity=10,
+                                        is_eaten=True,
+                                        cat_id=2
+                                    )
+                                ]
+                            ),
+                            Cat(
+                                id=1,
+                                birth_date="2020-01-01",
+                                paws_quantity=4,
+                                name="Whiskers",gender="M",
+                                tails_quantity=1,
+                                rats_eaten=[]
+                            )
+                        ]
                     }
                 }
             }
         }
-    }
-})
+    }})
 def read_cats(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     return crud.get_cats(db=db, skip=skip, limit=limit)
 

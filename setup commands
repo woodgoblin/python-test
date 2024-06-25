@@ -1,9 +1,11 @@
-pip install --upgrade pip
-pip install fastapi
-pip install pip-tools
+--install
+python3 -m venv venv
+source ./venv/bin/activate -- for Windows it's .\venv\Scripts\activate.bat
 
-pip freeze
--- get the fastapi from there to the requirements.in
-fastapi==0.111.0
-sqlalchemy==2.0.15 -- ORM
-psycopg2-binary==2.9.6 -- driver for pgsql
+pip install --upgrade pip
+pip install poetry
+
+poetry install
+
+--test
+./run.sh test
