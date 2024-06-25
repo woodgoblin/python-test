@@ -1,0 +1,7 @@
+Need to add the schema to DB model
+setup/run is a bash script, is this the way really?
+a way to further automate the environments? I feel that the envs separation using bash scripts is jury-rigged and lacks IDE support
+
+Less crappy but anyway
+need to add liquibase
+need to remove test.db after test runs
